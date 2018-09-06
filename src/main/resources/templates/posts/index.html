@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments :: headerBasics"></div>
+    <div th:replace="fragments :: myCSS"></div>
+</head>
+<body>
+    <nav th:replace="fragments :: navbar"></nav>
+    <h1>This is a test Post Index page! Look at all of the working, non-broken page elements!</h1>
+<div class="container">
+    <div class="row" th:each="post : ${posts}">
+        <h2 class="col-12" th:text="${post.title}"></h2>
+        <p class="col-12" th:text="${post.body}"></p>
+    </div></div>
+
+    <div th:replace="fragments :: footer"></div>
+    <div th:replace="fragments :: myScripts"></div>
+</body>
+</html>

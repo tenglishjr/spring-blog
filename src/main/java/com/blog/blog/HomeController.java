@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HomeController {
 
-    @RequestMapping(path = "/")
-    @ResponseBody
-    private String index() {
-        return "This is the landing page!";
+    @GetMapping(path = "/")
+    private String showHomepage() {
+        return "home";
     }
 
 }
