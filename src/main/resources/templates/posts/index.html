@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <div th:replace="fragments :: headerBasics"></div>
-    <div th:replace="fragments :: myCSS"></div>
+    <div th:replace="fragments/head :: headerBasics('Posts | blogical.')"></div>
+    <div th:replace="fragments/css :: myCSS"></div>
 </head>
 <body>
-    <nav th:replace="fragments :: navbar"></nav>
-    <h1>This is a test Post Index page! Look at all of the working, non-broken page elements!</h1>
-<div class="container">
-    <div class="row" th:each="post : ${posts}">
-        <h2 class="col-12" th:text="${post.title}"></h2>
-        <p class="col-12" th:text="${post.body}"></p>
-    </div></div>
+    <nav th:replace="fragments/navbar :: navbar"></nav>
 
-    <div th:replace="fragments :: footer"></div>
-    <div th:replace="fragments :: myScripts"></div>
+    <div class="container">
+        <h1>All Posts</h1>
+
+        <div class="row mx-0">
+            <div class="card col-3 p-0 m-2" th:each="post : ${posts}">
+                <h5 class="card-header" th:text="${post.title}"></h5>
+                <div class="card-body">
+                    <p class="card-text" th:text="${post.body}">With supporting text below as a natural lead-in to additional content.</p>
+                    <a th:href="'/posts/' + ${post.id}" class="btn btn-warning btn-sm">Full Post</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div th:replace="fragments/scripts :: myScripts"></div>
 </body>
 </html>

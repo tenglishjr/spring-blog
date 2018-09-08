@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Home Page</title>
+    <div th:replace="fragments/head :: headerBasics('Home | blogical.')"></div>
+    <div th:replace="fragments/css :: myCSS"></div>
 </head>
 <body>
-
-    <h1>This is the home page!</h1>
-
+    <nav th:replace="fragments/navbar :: navbar"></nav>
+    <div class="container">
+        <h1>Welcome to <span style="color: #ffc107;">blog</span>ical.</h1>
+        <br />
+        <a href="/posts" methods="GET" class="btn btn-warning">View Posts</a>
+    </div>
+    <div th:replace="fragments/scripts :: myScripts"></div>
 </body>
 </html>

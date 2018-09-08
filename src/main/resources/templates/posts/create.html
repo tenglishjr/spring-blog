@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/head :: headerBasics('Create a Post | blogical.')"></div>
+    <div th:replace="fragments/css :: myCSS"></div>
+</head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container">
+    <h1>Create a Post</h1>
+
+    <form th:action="'/posts/save'" th:method="POST" th:object="${post}">
+        Title:
+        <input th:field="*{title}"/>
+        <br />
+        Description:
+        <input th:field="*{body}" />
+        <br />
+        <button class="btn btn-outline-warning" type="submit">Submit</button>
+    </form>
+</div>
+    <div th:replace="fragments/scripts :: myScripts"></div>
+</body>
+</html>

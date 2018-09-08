@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <meta charset="UTF-8" />
-        <title>Dice Game</title>
+        <div th:replace="fragments/head :: headerBasics('Dice Game | blogical.')"></div>
+        <div th:replace="fragments/css :: myCSS"></div>
     </head>
     <body>
+        <nav th:replace="fragments/navbar :: navbar"></nav>
 
-        <h1>Welcome to the Dice Game!</h1>
-        <br />
+        <div class="container">
+            <h1>Welcome to the Dice Game!</h1>
+            <br />
 
-        <h4>We have chosen a random number...can you guess it?</h4>
+            <h4>We have chosen a random number...can you guess it?</h4>
 
-        <span><a href="/roll-dice/1">1</a></span>
-        <span><a href="/roll-dice/2">2</a></span>
-        <span><a href="/roll-dice/3">3</a></span>
-        <span><a href="/roll-dice/4">4</a></span>
-        <span><a href="/roll-dice/5">5</a></span>
-        <span><a href="/roll-dice/6">6</a></span>
+            <span><a href="/roll-dice/1">1</a></span>
+            <span><a href="/roll-dice/2">2</a></span>
+            <span><a href="/roll-dice/3">3</a></span>
+            <span><a href="/roll-dice/4">4</a></span>
+            <span><a href="/roll-dice/5">5</a></span>
+            <span><a href="/roll-dice/6">6</a></span>
 
-        <h4>Your guess: <span th:text="${userGuess}"></span></h4>
-        <h4>Correct answer: <span th:text="${winningNo}"></span></h4>
+            <h4>Your guess: <span th:text="${userGuess}"></span></h4>
+            <h4>Correct answer: <span th:text="${winningNo}"></span></h4>
 
-        <div th:if="${outcome == 'win'}"><h2>You win!</h2></div>
-        <div th:if="${outcome == 'lose'}"><h2>You lose :(</h2></div>
+            <div th:if="${outcome == 'win'}"><h2>You win!</h2></div>
+            <div th:if="${outcome == 'lose'}"><h2>You lose :(</h2></div>
 
+        </div>
+
+        <div th:replace="fragments/scripts :: myScripts"></div>
     </body>
 </html>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <div th:replace="fragments :: headerBasics"></div>
-    <div th:replace="fragments :: myCSS"></div>
+    <div th:replace="fragments/head :: headerBasics(${post.title} + ' | blogical.')"></div>
+    <div th:replace="fragments/css :: myCSS"></div>
 </head>
 <body>
-<nav th:replace="fragments :: navbar"></nav>
-
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container">
 
 <h2 th:text="${post.title}"></h2>
 
 <p th:text="${post.body}"></p>
-
-<div th:replace="fragments :: footer"></div>
-<div th:replace="fragments :: myScripts"></div>
+    <br />
+    <a th:href="'/posts/' + ${post.id} + '/edit'" class="btn btn-warning btn-sm">Edit</a>
+</div>
+<div th:replace="fragments/scripts :: myScripts"></div>
 </body>
 </html>
