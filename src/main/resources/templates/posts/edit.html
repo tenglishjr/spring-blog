@@ -7,7 +7,7 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container">
-    <h1>Edit a Post</h1>
+    <h1 class="display-1 pt-5">Edit a Post</h1>
 
     <form th:action="'/posts/' + ${post.id} + '/edit'" th:method="POST" th:object="${post}">
         Title:

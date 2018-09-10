@@ -7,16 +7,16 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="container">
-    <h1>Create a Post</h1>
+    <h1 class="display-1 pt-5">Create a Post</h1>
 
     <form th:action="'/posts/save'" th:method="POST" th:object="${post}">
         Title:
-        <input th:field="*{title}"/>
+        <input th:field="*{title}" class="mb-3"/>
         <br />
         Description:
-        <input th:field="*{body}" />
+        <input th:field="*{body}" class="mb-3"/>
         <br />
-        <button class="btn btn-outline-warning" type="submit">Submit</button>
+        <button class="btn btn-warning" type="submit">Submit</button>
     </form>
 </div>
     <div th:replace="fragments/scripts :: myScripts"></div>

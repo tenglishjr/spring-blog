@@ -1,0 +1,17 @@
+html,
+body {
+    font-family: 'Raleway', Helvetica, sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Comfortaa', Helvetica, sans-serif;
+}
+
+.jumbotron {
+    background: linear-gradient(
+                    rgba(0, 0, 0, .6),
+                    rgba(0, 0, 0, .6)),
+                    url("../images/business-composition-desk-393044.jpg");
+    background-size: cover;
+    height: 100vh;
+}

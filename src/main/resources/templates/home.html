@@ -6,10 +6,12 @@
 </head>
 <body>
     <nav th:replace="fragments/navbar :: navbar"></nav>
-    <div class="container">
-        <h1>Welcome to <span style="color: #ffc107;">blog</span>ical.</h1>
-        <br />
-        <a href="/posts" methods="GET" class="btn btn-warning">View Posts</a>
+    <div class="jumbotron jumbotron-fluid alt-jumbo">
+        <div class="container">
+            <h1 class="display-1 pt-5">Welcome to <span style="color: #ffc107;">blog</span>ical.</h1>
+            <br />
+            <a href="/posts" methods="GET" class="btn btn-warning">View Posts</a>
+        </div>
     </div>
     <div th:replace="fragments/scripts :: myScripts"></div>
 </body>

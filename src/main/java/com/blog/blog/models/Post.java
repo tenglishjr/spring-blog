@@ -1,9 +1,19 @@
 package com.blog.blog.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "posts")
 public class Post {
 
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column(nullable = false, length = 100)
     private String title;
+
+    @Column(nullable = false, unique = true)
     private String body;
 
     public Post() {}
@@ -17,6 +27,11 @@ public class Post {
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d, TITLE: %s, BODY: %s", id, title, body);
     }
 
     public String getTitle() {

@@ -1,4 +1,4 @@
-package com.blog.blog;
+package com.blog.blog.controllers;
 
 import com.blog.blog.models.Post;
 import com.blog.blog.services.PostService;
@@ -56,6 +56,12 @@ public class PostController {
     @PostMapping("/posts/{id}/edit")
     public String updatePost(@ModelAttribute Post post, @PathVariable long id) {
         postSvc.save(post);
+        return "redirect:/posts";
+    }
+
+    @GetMapping("/posts/{id}/delete")
+    public String deletePost(@ModelAttribute Post post, @PathVariable long id) {
+        postSvc.delete(id);
         return "redirect:/posts";
     }
 }
